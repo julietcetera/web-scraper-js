@@ -1,0 +1,30 @@
+{
+  "name": "web-scraper-js",
+  "version": "1.0.0",
+  "description": "A lightweight and simple to use web scraping library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juliette Opdenplatz",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jsdom": "^15.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julietcetera/web-scraper-js.git"
+  },
+  "keywords": [
+    "web",
+    "scraping"
+  ],
+  "bugs": {
+    "url": "https://github.com/julietcetera/web-scraper-js/issues"
+  },
+  "homepage": "https://github.com/julietcetera/web-scraper-js#readme"
+}
