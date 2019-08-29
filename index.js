@@ -66,7 +66,11 @@ exports.scrape = async (params) => {
             sample[tag] = [];
             let query = tags.collection.attribute[tag];
             $(query[0]).each(function() { // no syntactic sugar here (won't work)!
-                sample[tag].push($(this).attr(query[1]));
+
+                let val = $(this).attr(query[1]);
+                if (val) {
+                    sample[tag].push(val);
+                }
             });
         });
     }
@@ -92,7 +96,11 @@ exports.scrape = async (params) => {
 
             let query = tags.attribute[tag];
             $(query[0]).each(function() { // no syntactic sugar here (won't work)!
-                sample[tag].push($(this).attr(query[1]));
+
+                let val = $(this).attr(query[1]);
+                if (val) {
+                    sample[tag].push(val);
+                }
             });
         });
     }
