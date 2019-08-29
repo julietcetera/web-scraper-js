@@ -7,16 +7,23 @@ const {
 } = jsdom;
 
 /*
- * TODO: parameter validations
  * TODO: get rid of "singleton and collection"
  *   -> just always put everything in an array
  */
 exports.scrape = async (params) => {
 
+    if (!params) {
+       throw new Error('Parameters missing!');
+    }
+
+    if (!params.url || !params.tags) {
+       throw new Error('Parameters missing!');
+    }
+
     const {
         url,
         tags
-    } = params ;
+    } = params;
 
     let body = await request(params.url);
 
