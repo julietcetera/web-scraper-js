@@ -91,13 +91,13 @@ The code above will print the follwing output:
 
 ```json
 {
-  'movie-rating-value': [ '8.9' ],
-  'movie-character': [
-     'Pumpkin', 'Honey Bunny', 'Waitress', //...
+  "movie-rating-value": [ "8.9" ],
+  "movie-character": [
+     "Pumpkin", "Honey Bunny", "Waitress", //...
    ],
-  'movie-title': [ 'Pulp Fiction (1994) - IMDb' ],
-  'movie-actor': [
-     'Tim Roth', 'Amanda Plummer', 'Laura Lovelace', //...
+  "movie-title": [ "Pulp Fiction (1994) - IMDb" ],
+  "movie-actor": [
+     "Tim Roth", "Amanda Plummer", "Laura Lovelace", //...
    ]
 }
 ```
@@ -146,13 +146,13 @@ elements, respectively.
 
 ```json
 {
-  'movie-rating-value': '8.9',
-  'movie-character': [
-     'Pumpkin', 'Honey Bunny', 'Waitress', //...
+  "movie-rating-value": "8.9",
+  "movie-character": [
+     "Pumpkin", "Honey Bunny", "Waitress", //...
    ],
-  'movie-title': 'Pulp Fiction (1994) - IMDb',
-  'movie-actor': [
-     'Tim Roth', 'Amanda Plummer', 'Laura Lovelace', //...
+  "movie-title": "Pulp Fiction (1994) - IMDb",
+  "movie-actor": [
+     "Tim Roth", "Amanda Plummer", "Laura Lovelace", //...
    ]
 }
 ```
