@@ -7,8 +7,7 @@ const {
 } = jsdom;
 
 /*
- * TODO: get rid of "singleton and collection"
- *   -> just always put everything in an array
+ * TODO: if names are the same merge?
  */
 exports.scrape = async (params) => {
 
@@ -52,24 +51,51 @@ exports.scrape = async (params) => {
 
 
     /* set of items where a quantity of >1 is possible */
-    Object.keys(tags.collection.text).forEach(tag => {
+    if (tags.collection) {
 
-        sample[tag] = [];
+        Object.keys(tags.collection.text).forEach(tag => {
 
-        $(tags.collection.text[tag]).each(function(index, item) {
-            sample[tag].push(item.text);
+            sample[tag] = [];
+            $(tags.collection.text[tag]).each(function(index, item) {
+                sample[tag].push(item.textContent);
+            });
         });
-    });
 
-    Object.keys(tags.collection.attribute).forEach(tag => {
+        Object.keys(tags.collection.attribute).forEach(tag => {
 
-        sample[tag] = [];
-
-        let query = tags.collection.attribute[tag];
-        $(query[0]).each(function() { // no syntactic sugar here (won't work)!
-            sample[tag].push($(this).attr(query[1]));
+            sample[tag] = [];
+            let query = tags.collection.attribute[tag];
+            $(query[0]).each(function() { // no syntactic sugar here (won't work)!
+                sample[tag].push($(this).attr(query[1]));
+            });
         });
-    });
+    }
+
+    /* every item specified is simply put into an array */
+    if (tags.text) { 
+
+        Object.keys(tags.text).forEach(tag => {
+
+            sample[tag] = [];
+            $(tags.text[tag]).each(function(index, item) {
+
+                sample[tag].push(item.textContent);
+            });
+        });
+    }
+
+    if (tags.attribute) {
+
+        Object.keys(tags.attribute).forEach(tag => {
+
+            sample[tag] = [];
+
+            let query = tags.attribute[tag];
+            $(query[0]).each(function() { // no syntactic sugar here (won't work)!
+                sample[tag].push($(this).attr(query[1]));
+            });
+        });
+    }
 
     return sample;
 }
