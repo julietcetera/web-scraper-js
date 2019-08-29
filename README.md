@@ -89,7 +89,7 @@ The following examples scrape a couple of details about the movie Pulp Fiction f
 
 The code above will print the follwing output:
 
-```json
+```js
 {
   "movie-rating-value": [ "8.9" ],
   "movie-character": [
@@ -144,7 +144,7 @@ let webscraper = require('web-scraper-js');
 For the elements declared as singleton, an object will be returned, an array for collection type
 elements, respectively.
 
-```json
+```js
 {
   "movie-rating-value": "8.9",
   "movie-character": [
